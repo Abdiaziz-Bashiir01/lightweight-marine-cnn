@@ -77,7 +77,7 @@ The full methodology, experimental analysis, and evaluation results are document
 
 The complete research write-up is available here:
 
-📄 **[Download the Paper](CompleteCNN.pdf)**
+📄 **[Download the Paper](Complete CNN.pdf)**
 
 ---
 
