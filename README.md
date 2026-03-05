@@ -77,7 +77,7 @@ The full methodology, experimental analysis, and evaluation results are document
 
 The complete research write-up is available here:
 
-📄 **[Download the Paper](Complete CNN.pdf)**
+📄 **[Download the Paper](https://github.com/Abdiaziz-Bashiir01/lightweight-marine-cnn/blob/main/Complete%20CNN.pdf)**
 
 ---
 
