@@ -2,75 +2,88 @@
 
 ## Overview
 
-This project presents a compact Convolutional Neural Network (CNN) designed for nine-class marine species image classification in low-resource environments. The primary objective was to balance predictive accuracy with computational efficiency, enabling deployment on hardware with limited processing power and memory capacity.
+This repository contains the research write-up for a compact Convolutional Neural Network (CNN) developed for nine-class marine species image classification under strict computational constraints.
 
-The final model contains **316,593 trainable parameters** and achieves **62.89% validation accuracy**, demonstrating that meaningful performance can be achieved under strict resource constraints.
-
----
-
-## Motivation
-
-Many real-world marine monitoring systems operate in environments with limited computational resources. Traditional deep learning models are often too large for deployment in such settings. This project explores parameter-efficient architecture design while maintaining reasonable generalization performance.
+The primary objective of this project was to design a parameter-efficient architecture that balances predictive performance with deployability in low-resource environments. The final model contains **316,593 trainable parameters** and achieves **62.89% validation accuracy**, demonstrating that meaningful generalization can be achieved without large-scale models.
 
 ---
 
-## Model Architecture
+## Research Motivation
 
-The network is a lightweight CNN composed of:
+Marine monitoring systems often operate in computationally constrained environments where large deep learning models are impractical. While state-of-the-art architectures prioritize accuracy, they frequently neglect deployment feasibility.
 
-- Convolutional layers with small kernel sizes
+This project investigates whether carefully engineered lightweight CNN architectures can provide reliable classification performance while significantly reducing parameter count and computational overhead.
+
+---
+
+## Model Design and Architecture
+
+The network architecture was iteratively designed and experimentally refined to minimize parameters while maintaining stable convergence and generalization.
+
+Key components include:
+
+- Convolutional layers with small receptive fields
 - ReLU activations
-- Max-pooling layers for spatial downsampling
-- Dropout for regularization
+- Max-pooling for spatial downsampling
+- Dropout-based regularization
 - Fully connected classification head
-- Softmax output layer (9 classes)
+- Softmax output layer for nine-class prediction
 
-The architecture was iteratively optimized to minimize parameter count while preserving classification performance.
+**Total Trainable Parameters:** 316,593
 
-**Total Parameters:** 316,593
-
----
-
-## Dataset
-
-The model was trained on a nine-class marine species image dataset.
-
-Classes include various marine organisms categorized for supervised classification.  
-Data preprocessing included:
-
-- Image resizing
-- Normalization
-- Data augmentation (random flips, rotations)
-- Train-validation split
+Architectural variations were systematically evaluated to analyze trade-offs between model depth, efficiency, and validation performance.
 
 ---
 
-## Training Details
+## Dataset and Preprocessing
 
-- Framework: PyTorch
-- Loss Function: Cross-Entropy Loss
-- Optimizer: Adam
-- Regularization: Dropout + Data Augmentation
+The model was trained on a labeled nine-class marine species image dataset.
+
+Preprocessing steps included:
+
+- Image resizing and normalization
+- Data augmentation (random flips and rotations)
+- Controlled train-validation split
+
+These strategies were applied to improve generalization and mitigate overfitting under limited data conditions.
+
+---
+
+## Experimental Setup
+
+- Framework: PyTorch  
+- Loss Function: Cross-Entropy Loss  
+- Optimizer: Adam  
+- Regularization: Dropout + Data Augmentation  
 - Validation Accuracy: **62.89%**
 
-Multiple architectural variations were tested to evaluate trade-offs between:
-
-- Model depth
-- Parameter efficiency
-- Training time
-- Validation performance
+Multiple experimental iterations were conducted to evaluate architectural configurations and hyperparameter settings, ensuring principled performance comparisons.
 
 ---
 
-## Results
+## Results and Contributions
 
-The final model demonstrates stable convergence and reliable generalization under limited computational resources.
+This project demonstrates that:
 
-Example evaluation outputs and training curves are available in the `/results` directory.
+- Compact CNN architectures can achieve competitive performance under resource constraints.
+- Careful architectural tuning enables efficient trade-offs between parameter count and predictive accuracy.
+- Deep learning models can be adapted for deployment in computationally limited environments without excessive complexity.
+
+The full methodology, experimental analysis, and evaluation results are documented in the paper.
 
 ---
 
-## Note on Code Availability
+## Paper
 
-The implementation code is available upon request. 
-This repository focuses on the research write-up and experimental results.
+The complete research write-up is available here:
+
+📄 **[Download the Paper](Complete CNN.pdf)**
+
+---
+
+## Code Availability
+
+The implementation was developed in PyTorch.  
+Code and experimental details are available upon request.
+
+This repository focuses on the research documentation and results.
